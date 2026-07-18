@@ -61,5 +61,24 @@ def filtrar(juegos, columna, valor):
 
     return filtrados
 
+def mostrar_resultados(juegos):
+
+    print("\n================================")
+
+    if len(juegos) == 1:
+
+        print("Listo. Encontré un juego que puede gustarte:\n")
+
+    else:
+
+        print("Encontré estos juegos podrían gustarte:\n")
+
+    for juego in juegos[:3]:
+
+        print("-", juego["nombre"])
+
+    print("================================")
+
+
 
 
