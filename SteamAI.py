@@ -50,6 +50,16 @@ def preguntar(texto, opciones):
 
         print("\nOpción inválida.")
 
+def filtrar(juegos, columna, valor):
+
+    filtrados = []
+
+    for juego in juegos:
+
+        if juego[columna].lower() == valor.lower():
+            filtrados.append(juego)
+
+    return filtrados
 
 
 
