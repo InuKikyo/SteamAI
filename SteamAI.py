@@ -79,6 +79,15 @@ def mostrar_resultados(juegos):
 
     print("================================")
 
+def reiniciar():
+
+    respuesta = preguntar(
+        "¿Querés buscar otro juego?",
+        ["Si","No"]
+    )
+
+    return respuesta == "Si"
+
 
 
 
