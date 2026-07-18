@@ -29,6 +29,27 @@ def bienvenida():
     print("Voy a ayudarte a encontrar el juego ideal.")
     print("\nEscribí 'salir' cuando quieras finalizar.\n")
 
+def preguntar(texto, opciones):
+
+    while True:
+
+        print("\n"+texto)
+
+        for opcion in opciones:
+            print("-", opcion)
+
+        respuesta = input("> ").strip().lower()
+
+        if respuesta == "salir":
+            return "salir"
+
+        for opcion in opciones:
+
+            if respuesta == opcion.lower():
+                return opcion
+
+        print("\nOpción inválida.")
 
 
-    
+
+
