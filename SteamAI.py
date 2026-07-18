@@ -89,5 +89,112 @@ def reiniciar():
     return respuesta == "Si"
 
 
+from funciones import *
+
+preguntas = [
+
+{
+"columna":"jugadores",
+"pregunta":"¿Querés jugar solo o multijugador?",
+"opciones":["Solo","Multijugador"]
+},
+
+{
+"columna":"historia",
+"pregunta":"¿Te interesa una buena historia?",
+"opciones":["Si","No"]
+},
+
+{
+"columna":"graficos",
+"pregunta":"¿Qué estilo gráfico preferís?",
+"opciones":["2D","3D","Pixel Art"]
+},
+
+{
+"columna":"online",
+"pregunta":"¿Querés jugar online?",
+"opciones":["Si","No"]
+},
+
+{
+"columna":"mundo_abierto",
+"pregunta":"¿Te gustan los mundos abiertos?",
+"opciones":["Si","No"]
+},
+
+{
+"columna":"genero",
+"pregunta":"¿Qué género preferís?",
+"opciones":[
+"Pelea",
+"Hack and Slash",
+"Táctico",
+"RPG",
+"MMORPG",
+"Carreras",
+"Acción",
+"Farming",
+"Metroidvania",
+"Terror",
+"Survival",
+"Shooter",
+"Roguelike",
+"Musical",
+"Battle Royale"
+]
+}
+
+]
+
+
+bienvenida()
+
+while True:
+
+    juegos = cargar_juegos()
+
+    if juegos is None:
+        break
+
+    for pregunta in preguntas:
+
+        if len(juegos) <= 3:
+            break
+
+        respuesta = preguntar(
+            pregunta["pregunta"],
+            pregunta["opciones"]
+        )
+
+        if respuesta == "salir":
+
+            print("\n¡Hasta luego!")
+
+            exit()
+
+        juegos = filtrar(
+            juegos,
+            pregunta["columna"],
+            respuesta
+        )
+
+        if len(juegos) == 0:
+
+            print("\nLo siento. No encontré juegos con esas características.")
+
+            break
+
+    if len(juegos) > 0:
+
+        mostrar_resultados(juegos)
+
+    if not reiniciar():
+
+        print("\nGracias por usar SteamAI.")
+
+        break
+
+
 
 
