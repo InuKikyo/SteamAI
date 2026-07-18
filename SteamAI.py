@@ -12,10 +12,23 @@ def cargar_juegos():
 
         if len(juegos) == 0:
             print("No hay juegos registrados.")
-            return none
+            return None
 
         return juegos
     except FileNotFoundError:
-        print("Error: No se ha enccontrado la base de datos.")
-        return none
+        print("Error: No se ha encontrado la base de datos.")
+        return None
 
+def bienvenida():
+
+    print("="*45)
+    print("          Bienvenido a SteamAI")
+    print("="*45)
+
+    print("\nHola. Soy SteamAI.")
+    print("Voy a ayudarte a encontrar el juego ideal.")
+    print("\nEscribí 'salir' cuando quieras finalizar.\n")
+
+
+
+    
