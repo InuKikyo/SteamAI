@@ -89,8 +89,6 @@ def reiniciar():
     return respuesta == "Si"
 
 
-from funciones import *
-
 preguntas = [
 
 {
