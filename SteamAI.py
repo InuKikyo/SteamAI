@@ -22,13 +22,15 @@ def cargar_juegos():
 def bienvenida():
 
     print("="*45)
-    print("          Bienvenido a SteamAI")
+    print("          Bienvenido a SteamBot")
     print("="*45)
 
-    print("\nHola. Soy SteamAI.")
-    print("Voy a ayudarte a encontrar el juego ideal.")
-    print("\nEscribí 'salir' cuando quieras finalizar.\n")
-
+    print("\nHola. Soy SteamBot.")
+    print("¿Tenés problemas para elegir un juego? Puedo ayudarte a elegir uno.")
+    print("Voy a hacerte una serie de preguntas y voy a encontrar el juego " \
+    "más acorde a tus preferencias")
+    print("\nPodés escribir la palabra salir para finalizar cuando gustes.")
+    
 def preguntar(texto, opciones):
 
     while True:
@@ -189,7 +191,7 @@ while True:
 
     if not reiniciar():
 
-        print("\nGracias por usar SteamAI.")
+        print("\nGracias por usar SteamBot. Espero haberte ayudado.")
 
         break
 
